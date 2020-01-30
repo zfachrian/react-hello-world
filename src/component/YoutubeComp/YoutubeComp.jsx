@@ -1,7 +1,7 @@
 import React from 'react';
-import './YoutubeComponent.css';
+import './YoutubeComp.css';
 
-const YoutubeComponent = (props) => {
+const YoutubeComp = (props) => {
     return (
         <div className="youtube-wrapper">
             <div className="img-thumb">
@@ -14,10 +14,10 @@ const YoutubeComponent = (props) => {
     )
 }
 
-YoutubeComponent.defaultProps = {
+YoutubeComp.defaultProps = {
     time: '00.00',
     title: 'Unknown',
     desc: 'Unknown'
 }
 
-export default YoutubeComponent;
+export default YoutubeComp;
