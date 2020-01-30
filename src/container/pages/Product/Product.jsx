@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import './Product.css';
 import CardProduct from './CardProduct/CardProduct';
+import {connect} from 'react-redux'
 
 class Product extends Component{
 
-    state = {
+    /* state = {
         order: 4,
         name: 'Faizal'
     }
@@ -13,7 +14,7 @@ class Product extends Component{
         this.setState({
             order: newValue
         })
-    }
+    } */
 
     render(){
         return(
@@ -26,13 +27,22 @@ class Product extends Component{
                     </div>
                     <div className="troley">
                         <img src="https://cdn6.aptoide.com/imgs/8/3/8/8385f1d1790787d856c0347b2bf1e175_icon.png?w=256" alt="" />
-                        <div className="count">{this.state.order}</div>
+                        <div className="count">{this.props.order}</div>
                     </div>
                 </div>
-                <CardProduct onCounterChange={(value) => this.handleCounterChange(value)} />
+                <CardProduct />
             </Fragment>
         )
     }
 }
 
-export default Product;
+/**
+ * mapStateToProps dogunakan untuk mengambil state global menggunakan Redux
+ */
+const mapStateToProps = state => {
+    return {
+        order: state.totalOrder
+    }
+}
+
+export default connect(mapStateToProps)(Product);

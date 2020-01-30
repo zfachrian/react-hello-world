@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import './LifeCycleComp.css';
+import {connect} from 'react-redux';
 
 class LifeCycleComp extends Component{
 
@@ -60,13 +61,24 @@ class LifeCycleComp extends Component{
     render(){
         console.log('render');
         return(
-            <fragment>
+            <Fragment>
                 <p>Halaman Life Cycle</p>
                 <hr/>
                 <button className="btn" onClick={this.changeCount}>Component Button {this.state.count}</button>
-            </fragment>
+                <hr/>
+                <p>Total Order: {this.props.order}</p>
+            </Fragment>
         )
     }
 }
 
-export default LifeCycleComp;
+/**
+ * mapStateToProps dogunakan untuk mengambil state global menggunakan Redux
+ */
+const mapStateToProps = (state) => {
+    return {
+        order: state.totalOrder
+    }
+}
+
+export default connect(mapStateToProps)(LifeCycleComp);
