@@ -58,18 +58,18 @@ class LifeCycleComp extends Component{
         })
     }
 
-    render(){
-        console.log('render');
-        return(
-            <Fragment>
-                <p>Halaman Life Cycle</p>
-                <hr/>
-                <button className="btn" onClick={this.changeCount}>Component Button {this.state.count}</button>
-                <hr/>
-                <p>Total Order: {this.props.order}</p>
-            </Fragment>
-        )
-    }
+	render(){
+		console.log('render');
+		return(
+			<Fragment>
+				<p>Halaman Life Cycle</p>
+				<hr/>
+				<button className="btn" onClick={this.changeCount}>Component Button {this.state.count}</button>
+				<hr/>
+				<p>Total Order: {this.props.order}</p>
+			</Fragment>
+		)
+	}
 }
 
 /**
